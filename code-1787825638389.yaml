@@ -1,0 +1,31 @@
+name: senior_med_reminder
+description: 一款专为长辈设计的吃药提醒与超时免费告警App，到点自动响铃并播放家人分身语音，超时未点击将通过免费的 Telegram 发送报警信息给家属。
+publish_to: 'none' # 除非你想发布到 pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # 用于设置本地定时闹钟和全屏提醒
+  flutter_local_notifications: ^17.0.0
+  # 用于播放“家人分身”声音铃声
+  audioplayers: ^6.0.0
+  # 用于向 Python 后端发送状态同步请求
+  http: ^1.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  # 用于生成图标和默认配置（非必须，但推荐）
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  # ⚠️ 这部分必须配置：告诉 Flutter 哪里找声音文件
+  assets:
+    - assets/father_med_reminder.mp3 # 家人声音文件路径
